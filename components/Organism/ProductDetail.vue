@@ -1,5 +1,5 @@
 <template lang="">
-  <div v-if="item">
+  <elements-container-app v-if="item">
     <div class="product-detail">
       <div class="product-detail-images">
         <elements-product-images
@@ -21,7 +21,7 @@
     <br />
     <h3>Description</h3>
     <p>{{ item.description }}</p>
-  </div>
+  </elements-container-app>
 </template>
 <script>
 import { mapState } from 'vuex'

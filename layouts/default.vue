@@ -3,9 +3,7 @@
     <!-- Navbar -->
     <elements-navbar-app></elements-navbar-app>
     <article class="content-app">
-      <elements-container-app>
-        <Nuxt />
-      </elements-container-app>
+      <Nuxt />
     </article>
 
     <!-- Footer -->

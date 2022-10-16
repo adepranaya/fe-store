@@ -56,6 +56,7 @@ export default {
     width: 100%;
     height: 200px;
     cursor: zoom-in;
+    object-fit: cover;
   }
   &-more {
     grid-area: images;

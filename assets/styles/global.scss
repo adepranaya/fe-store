@@ -19,38 +19,44 @@ body {
   }
   @for $gap from 1 to 96 {
     &.gap-#{$gap} {
-      gap: #{$gap*0.2}rem;
+      gap: #{$gap * 0.2}rem;
     }
   }
 }
 .grid {
   /*--- taken from the MDN site */
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
   grid-gap: 24px;
   grid-auto-rows: minmax(200px, auto);
 }
 
 @for $margin from 1 to 96 {
   .m-#{$margin} {
-    margin: #{$margin*0.2}rem;
+    margin: #{$margin * 0.2}rem;
   }
   .mr-#{$margin} {
-    margin-right: #{$margin*0.2}rem;
+    margin-right: #{$margin * 0.2}rem;
   }
   .ml-#{$margin} {
-    margin-right: #{$margin*0.2}rem;
+    margin-left: #{$margin * 0.2}rem;
   }
   .mt-#{$margin} {
-    margin-right: #{$margin*0.2}rem;
+    margin-top: #{$margin * 0.2}rem;
   }
   .mb-#{$margin} {
-    margin-right: #{$margin*0.2}rem;
+    margin-bottom: #{$margin * 0.2}rem;
   }
 }
 
 .text-shadow {
   text-shadow: 1px 0px 4px #686a6c;
+}
+.container {
+  margin: 0 1rem;
 }
 /* Responsive */
 @media (min-width: 1024px) {

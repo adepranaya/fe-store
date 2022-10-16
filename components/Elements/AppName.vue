@@ -1,3 +1,3 @@
 <template>
-  <h1>My Store</h1>
+  <h1><img src="~/assets/static/logo-deinnuna.svg" alt=""></h1>
 </template>

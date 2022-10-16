@@ -1,5 +1,5 @@
 <template lang="">
-  <footer class="bg-primary text-light footer">
+  <footer class="bg-primary text-light footer mt-8">
     <elements-container-app class="footer-container flex items-center gap-4">
       <elements-logo-app></elements-logo-app>
       <div>|</div>
