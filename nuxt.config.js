@@ -31,16 +31,20 @@ export default {
   },
 
   dir: {
-    assets: "assets/styles",
-    static: "assets/static",
-    plugins: "app/plugins",
-    store: "app/store",
+    assets: 'assets/styles',
+    static: 'assets/static',
+    plugins: 'app/plugins',
+    store: 'app/store',
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["~/assets/styles/main.scss"],
+  css: ['~/assets/styles/main.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    {
+      src: '~/app/plugins/common.plugin.js',
+    },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

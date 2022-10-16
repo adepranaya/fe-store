@@ -1,5 +1,5 @@
 <template>
-  <h1>I am rendered on the {{ renderedOn }} side</h1>
+    <templates-product-detail></templates-product-detail>
 </template>
 
 <script>

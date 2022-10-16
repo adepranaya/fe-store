@@ -1,0 +1,40 @@
+body {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  // background-color: map-get($colors, secondaryColor);
+}
+
+/* Display Container */
+.flex {
+  display: flex;
+  $justifies: start, center, end, space-around, space-between;
+  @each $justify in $justifies {
+    &.justify-#{$justify} {
+      justify-content: $justify;
+    }
+  }
+  @each $justify in $justifies {
+    &.items-#{$justify} {
+      align-items: $justify;
+    }
+  }
+  @for $gap from 1 to 96 {
+    &.gap-#{$gap} {
+      gap: #{$gap*0.2}em;
+    }
+  }
+}
+.grid {
+  /*--- taken from the MDN site */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 24px;
+  grid-auto-rows: minmax(200px, auto);
+}
+
+/* Responsive */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 64rem;
+    margin: auto;
+  }
+}

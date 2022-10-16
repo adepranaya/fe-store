@@ -1,13 +1,15 @@
 <template lang="">
   <section>
     <!-- Navbar -->
-    <ElementsNavbarApp></ElementsNavbarApp>
+    <elements-navbar-app></elements-navbar-app>
     <article>
-      <Nuxt />
+      <elements-container-app>
+        <Nuxt />
+      </elements-container-app>
     </article>
 
     <!-- Footer -->
-    <ElementsFooterApp></ElementsFooterApp>
+    <elements-footer-app></elements-footer-app>
   </section>
 </template>
 
@@ -16,7 +18,4 @@ export default {}
 </script>
 
 <style lang="scss">
-* {
-  box-sizing: border-box;
-}
 </style>

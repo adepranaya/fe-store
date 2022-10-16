@@ -1,0 +1,30 @@
+$colors: (
+  darkColor: #393e46,
+  primaryColor: #00ABB3,
+  secondaryColor: #ffd1d1,
+  tertiaryColor: #ffe3e1,
+  lightColor: #eeeeee,
+  successColor: #3fa796,
+  warningColor: #fec260,
+  dangerColor: #a10035,
+);
+
+$colorTexts: 'dark', 'primary', 'secondary', 'tertiary', 'light', 'success',
+  'warning', 'danger';
+
+@each $color, $i in $colorTexts {
+  .btn-#{$color} {
+    @if $color == 'primary' {
+      color: map-get($colors, lightColor);
+    } @else {
+      color: map-get($colors, darkColor);
+    }
+    background-color: map-get($colors, #{$color}Color);
+  }
+  .bg-#{$color} {
+    background-color: map-get($colors, #{$color}Color);
+  }
+  .text-#{$color} {
+    color: map-get($colors, #{$color}Color);
+  }
+}
