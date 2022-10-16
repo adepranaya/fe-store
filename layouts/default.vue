@@ -2,7 +2,7 @@
   <section>
     <!-- Navbar -->
     <elements-navbar-app></elements-navbar-app>
-    <article>
+    <article class="content-app">
       <elements-container-app>
         <Nuxt />
       </elements-container-app>
@@ -18,4 +18,7 @@ export default {}
 </script>
 
 <style lang="scss">
+.content-app {
+  min-height: 78vh;
+}
 </style>

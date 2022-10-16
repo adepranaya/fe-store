@@ -11,4 +11,10 @@ export default {
       return {data: resp.data, total}
     })
   },
+  async read(params) {
+    return await actionHelper.apiWrapper(async () => {
+      const resp = await api.get(`${parentPath}/${params.id}`)
+      return resp.data
+    })
+  },
 }

@@ -19,7 +19,7 @@ body {
   }
   @for $gap from 1 to 96 {
     &.gap-#{$gap} {
-      gap: #{$gap*0.2}em;
+      gap: #{$gap*0.2}rem;
     }
   }
 }
@@ -31,6 +31,27 @@ body {
   grid-auto-rows: minmax(200px, auto);
 }
 
+@for $margin from 1 to 96 {
+  .m-#{$margin} {
+    margin: #{$margin*0.2}rem;
+  }
+  .mr-#{$margin} {
+    margin-right: #{$margin*0.2}rem;
+  }
+  .ml-#{$margin} {
+    margin-right: #{$margin*0.2}rem;
+  }
+  .mt-#{$margin} {
+    margin-right: #{$margin*0.2}rem;
+  }
+  .mb-#{$margin} {
+    margin-right: #{$margin*0.2}rem;
+  }
+}
+
+.text-shadow {
+  text-shadow: 1px 0px 4px #686a6c;
+}
 /* Responsive */
 @media (min-width: 1024px) {
   .container {

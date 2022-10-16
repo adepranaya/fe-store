@@ -12,7 +12,7 @@
     </nuxt-link>
     <!-- actions -->
     <div class="card-actions">
-      <ElementsButtonApp block class="btn-primary">Hubungi</ElementsButtonApp>
+      <elements-call-action-button>Order</elements-call-action-button>
     </div>
   </div>
 </template>
@@ -39,6 +39,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import '~/assets/styles/colors.scss';
 .card {
   background: #fff;
   a {
@@ -61,6 +62,10 @@ export default {
     padding: 6px 12px;
   }
   & &-actions {
+    a {
+      text-align: center;
+      color: map-get($map: $colors, $key: lightColor);
+    }
     padding: 6px 12px 18px;
   }
 }

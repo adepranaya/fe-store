@@ -11,4 +11,11 @@ export default {
       context.commit("Set_Items", resp.data)
     })
   },
+  async read(context, payload) {
+    await actionHelper.actionWrapper(async () => {
+      const resp = await productApi.read(payload)
+
+      context.commit("Set_Item", resp)
+    })
+  },
 }

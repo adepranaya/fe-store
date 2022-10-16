@@ -1,7 +1,7 @@
 <template>
   <elements-container-app>
     <h2>All Products</h2>
-
+    <br>
     <organism-product-grid></organism-product-grid>
     <elements-pagination-app
       :current-page="filter._page"
@@ -43,4 +43,4 @@ export default {
   },
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss" scoped></style>

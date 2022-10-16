@@ -1,12 +1,15 @@
 <template>
-  <button
+  <component
+    :is="!href ? 'button' : 'a'"
+    :href="href"
     class="btn"
     :class="`${block ? 'btn-block' : ''}`"
     @click="$emit('click')"
   >
     <slot></slot>
-  </button>
+  </component>
 </template>
+
 <script>
 export default {
   props: {
@@ -14,16 +17,21 @@ export default {
       type: Boolean,
       default: false,
     },
+    href: {
+      type: String,
+      default: '',
+    },
   },
 }
 </script>
+
 <style lang="scss" scoped>
 .btn {
   padding: 0.3rem 0.6rem;
   border-radius: 0.2rem;
   cursor: pointer;
+
   &-block {
-    display: block;
     width: 100%;
   }
   border: none;
