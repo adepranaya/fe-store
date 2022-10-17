@@ -20,6 +20,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~/assets/styles/sizes.scss';
 .lightbox {
   position: fixed;
   top: 0;
