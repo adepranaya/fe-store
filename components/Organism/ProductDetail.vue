@@ -18,9 +18,10 @@
             @zoom-in-preview="onZoomInPreview"
           ></elements-product-images>
         </div>
+
         <div class="product-detail-description">
           <h3>{{ item.name }}</h3>
-          <p>{{ item.short_description }}</p>
+          <p class="text-grey">{{ item.short_description }}</p>
           <h2>{{ $currency.format(item.price) }}</h2>
           <br />
           <elements-product-variance
@@ -35,7 +36,7 @@
       </div>
       <br />
       <h3>Description</h3>
-      <p>{{ item.description }}</p>
+      <p class="text-grey">{{ item.description }}</p>
       <elements-lightbox-app v-if="zoomPreview" @close="onClosePreview">
         <elements-product-images
           :is-zoom="true"

@@ -1,10 +1,8 @@
 <template>
   <div>
-    <elements-container-app>
-      <h2>All Products</h2>
-    </elements-container-app>
     <elements-container-sticky>
-      <elements-container-app class="py-5">
+      <elements-container-app class="py-5 flex justify-space-between flex-wrap">
+        <h2>All Products</h2>
         <input
           v-model="search"
           type="search"
@@ -73,7 +71,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.search-product {
-  width: 100%;
+@import '~/assets/styles/sizes.scss';
+@media screen and (max-width: $medium) {
+  .search-product {
+    width: 100%;
+  }
 }
 </style>

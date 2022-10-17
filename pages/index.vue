@@ -5,5 +5,8 @@
 <script>
 export default {
   name: 'IndexPage',
+  created() {
+    this.$store.commit('app/Set_With_Back', false)
+  },
 }
 </script>

@@ -28,7 +28,7 @@ export default {
 
 .navbar {
   min-height: 100px;
-  margin-bottom: 24px;
+  // margin-bottom: 24px;
   &-container {
     height: 100px;
   }

@@ -1,6 +1,7 @@
 $colors: (
   darkColor: #393e46,
-  primaryColor: #BB9DE3,
+  greyColor: #65696e,
+  primaryColor: #bb9de3,
   secondaryColor: #ffd1d1,
   tertiaryColor: #ffe3e1,
   lightColor: #eeeeee,
@@ -9,8 +10,8 @@ $colors: (
   dangerColor: #a10035,
 );
 
-$colorTexts: 'dark', 'primary', 'secondary', 'tertiary', 'light', 'success',
-  'warning', 'danger';
+$colorTexts: 'dark', 'grey', 'primary', 'secondary', 'tertiary', 'light',
+  'success', 'warning', 'danger';
 
 @each $color, $i in $colorTexts {
   .btn-#{$color} {
@@ -36,6 +37,6 @@ input {
 
 input:focus {
   outline: none;
-  border:2px solid map-get($colors, primaryColor);
+  border: 2px solid map-get($colors, primaryColor);
   box-shadow: 0 0 8px map-get($colors, primaryColor);
 }

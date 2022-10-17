@@ -5,7 +5,7 @@
       <img class="card-thumbnail" :src="image" :alt="name" />
       <div class="card-content">
         <!-- name of product -->
-        <div>{{ name }}</div>
+        <div class="text-grey">{{ name }}</div>
         <!-- price -->
         <div>{{ $currency.format(price) }}</div>
       </div>
