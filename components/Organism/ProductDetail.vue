@@ -1,36 +1,72 @@
 <template lang="">
-  <elements-container-app v-if="item">
-    <div class="product-detail">
-      <div class="product-detail-images">
+  <div>
+    <elements-container-app v-if="loading">
+      Please wait...
+      <br />
+    </elements-container-app>
+    <elements-container-app v-if="app_error">
+      {{ app_error_message }}
+      <br />
+    </elements-container-app>
+    <elements-container-app v-if="!loading && item">
+      <div class="product-detail">
+        <div class="product-detail-images">
+          <elements-product-images
+            :images="item.images"
+            @zoom-in-preview="onZoomInPreview"
+          ></elements-product-images>
+        </div>
+        <div class="product-detail-description">
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.short_description }}</p>
+          <h2>{{ $currency.format(item.price) }}</h2>
+          <br />
+          <elements-product-variance
+            v-model="varianceSelected"
+            :variance="item.variance"
+          ></elements-product-variance>
+          <br />
+          <elements-call-action-button :additional-text="addTextOrder"
+            >Order Now</elements-call-action-button
+          >
+        </div>
+      </div>
+      <br />
+      <h3>Description</h3>
+      <p>{{ item.description }}</p>
+      <elements-lightbox-app v-if="zoomPreview" @close="onClosePreview">
         <elements-product-images
+          :is-zoom="true"
           :images="item.images"
         ></elements-product-images>
-      </div>
-      <div class="product-detail-description">
-        <h3>{{ item.name }}</h3>
-        <p>{{ item.short_description }}</p>
-        <h2>{{ $currency.format(item.price) }}</h2>
-        <br />
-        <elements-product-variance
-          :variance="item.variance"
-        ></elements-product-variance>
-        <br />
-        <elements-call-action-button>Order Now</elements-call-action-button>
-      </div>
-    </div>
-    <br />
-    <h3>Description</h3>
-    <p>{{ item.description }}</p>
-  </elements-container-app>
+      </elements-lightbox-app>
+    </elements-container-app>
+  </div>
 </template>
 <script>
 import { mapState } from 'vuex'
 
 export default {
+  data() {
+    return {
+      zoomPreview: false,
+      varianceSelected: '',
+    }
+  },
   computed: {
     ...mapState({
       item: (state) => state.product.item,
+      loading: (state) => state.product.loading,
+      app_error: (state) => state.app.app_error,
+      app_error_message: (state) => state.app.app_error_message,
     }),
+    addTextOrder() {
+      return decodeURI(
+        `${this.item.name} sebanyak [jumlah] alamat [alamat] ${
+          this.varianceSelected ? 'Varian ' + this.varianceSelected : ''
+        }`
+      )
+    },
   },
   created() {
     this.getData()
@@ -41,6 +77,12 @@ export default {
       await this.$store.dispatch('product/read', {
         id,
       })
+    },
+    onZoomInPreview() {
+      this.zoomPreview = true
+    },
+    onClosePreview() {
+      this.zoomPreview = false
     },
   },
 }

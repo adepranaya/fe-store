@@ -17,14 +17,14 @@ export default {
     return {
       phoneWA: '6285156019559',
       linkWA: 'https://api.whatsapp.com',
-      textLinkWA: 'Halo+Deinuna+Saya+ingin+order',
+      textLinkWA: 'Halo+Deinuna+Saya+ingin+order+',
     }
   },
   computed: {
     defaultHref() {
       return `${this.linkWA}/send?phone=${this.phoneWA}&text=${
         this.textLinkWA
-      }${encodeURI(this.additionalText)}`
+      }${decodeURI(this.additionalText)}`
     },
   },
 }

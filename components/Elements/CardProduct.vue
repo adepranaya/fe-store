@@ -12,7 +12,9 @@
     </nuxt-link>
     <!-- actions -->
     <div class="card-actions">
-      <elements-call-action-button>Order</elements-call-action-button>
+      <elements-call-action-button :additional-text="addTextOrder">
+        Order
+      </elements-call-action-button>
     </div>
   </div>
 </template>
@@ -34,6 +36,11 @@ export default {
     price: {
       type: Number,
       default: 0,
+    },
+  },
+  computed: {
+    addTextOrder() {
+      return decodeURI(`${this.name} sebanyak [jumlah] alamat [alamat]`)
     },
   },
 }

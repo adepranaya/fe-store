@@ -1,5 +1,13 @@
 <template>
-  <div >
+  <div>
+    <div v-if="loading">
+      Please wait...
+      <br>
+    </div>
+    <div v-if="app_error">
+      {{ app_error_message }}
+      <br>
+    </div>
     <div v-if="products" class="grid">
       <elements-card-product
         v-for="(item, index) in products"
@@ -22,6 +30,9 @@ export default {
   computed: {
     ...mapState({
       products: (state) => state.product.items,
+      loading: (state) => state.product.loading,
+      app_error: (state) => state.app.app_error,
+      app_error_message: (state) => state.app.app_error_message,
     }),
   },
   beforeDestroy() {

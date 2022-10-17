@@ -1,13 +1,18 @@
 <template lang="">
   <div v-if="images" class="product-images">
-    <img class="product-images-preview" :src="getPreview" alt="" />
+    <img
+      :class="`product-images-preview ${!isZoom ? 'zoom' : ''}`"
+      :src="getPreview"
+      alt=""
+      @click="onZoomInPreview"
+    />
     <div class="product-images-more">
       <img
         v-for="(item, index) in images"
         :key="`image-${index}`"
         :src="item.url"
         class="product-image"
-        :class="index === currPreviewIndex ? 'active' : ''"
+        :class="`${index === currPreviewIndex ? 'active' : ''}`"
         :alt="'product-image'"
         @click="changePreview(index)"
       />
@@ -18,6 +23,10 @@
 <script>
 export default {
   props: {
+    isZoom: {
+      type: Boolean,
+      default: false,
+    },
     images: {
       type: Array,
       default: () => [],
@@ -40,6 +49,9 @@ export default {
     changePreview(index) {
       this.currPreviewIndex = index
     },
+    onZoomInPreview() {
+      if (!this.isZoom) this.$emit('zoom-in-preview', { zoomIn: true })
+    },
   },
 }
 </script>
@@ -55,9 +67,12 @@ export default {
     grid-area: preview;
     width: 100%;
     height: 200px;
-    cursor: zoom-in;
+
     object-fit: cover;
   }
+  &-preview.zoom {
+      cursor: zoom-in;
+    }
   &-more {
     grid-area: images;
     display: flex;

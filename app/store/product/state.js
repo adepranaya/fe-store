@@ -6,4 +6,5 @@ export default () => ({
   items: [],
   item: null,
   total: 0,
+  loading: false,
 })

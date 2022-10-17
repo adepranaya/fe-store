@@ -5,6 +5,9 @@ export default {
   Set_Items(state, payload) {
     state.items = payload
   },
+  Set_Loading(state, payload) {
+    state.loading = payload
+  },
   Set_Item(state, payload) {
     state.item = payload
   },
