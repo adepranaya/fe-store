@@ -56,6 +56,14 @@ $texts: left, right, center;
   .mb-#{$margin} {
     margin-bottom: #{$margin * 0.2}rem;
   }
+  .mx-#{$margin} {
+    margin-right: #{$margin * 0.2}rem;
+    margin-left: #{$margin * 0.2}rem;
+  }
+  .my-#{$margin} {
+    margin-top: #{$margin * 0.2}rem;
+    margin-bottom: #{$margin * 0.2}rem;
+  }
 }
 @for $padding from 1 to 96 {
   .p-#{$padding} {
@@ -71,6 +79,14 @@ $texts: left, right, center;
     padding-top: #{$padding * 0.2}rem;
   }
   .pb-#{$padding} {
+    padding-bottom: #{$padding * 0.2}rem;
+  }
+  .px-#{$padding} {
+    padding-right: #{$padding * 0.2}rem;
+    padding-left: #{$padding * 0.2}rem;
+  }
+  .py-#{$padding} {
+    padding-top: #{$padding * 0.2}rem;
     padding-bottom: #{$padding * 0.2}rem;
   }
 }

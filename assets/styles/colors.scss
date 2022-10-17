@@ -28,3 +28,14 @@ $colorTexts: 'dark', 'primary', 'secondary', 'tertiary', 'light', 'success',
     color: map-get($colors, #{$color}Color);
   }
 }
+
+input {
+  padding: 4px 8px;
+  border: 2px solid map-get($colors, primaryColor);
+}
+
+input:focus {
+  outline: none;
+  border:2px solid map-get($colors, primaryColor);
+  box-shadow: 0 0 8px map-get($colors, primaryColor);
+}

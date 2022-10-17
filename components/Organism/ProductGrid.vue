@@ -17,9 +17,10 @@
         >
         </elements-card-product>
       </div>
-      <div v-show="!products">
-        <img src="~/assets/static/illustrations/undraw_empty.svg" alt="Empty" />
-        Produk Kosong
+      <div v-show="!loading && (!products || products.length === 0)">
+        <elements-empty-product>
+          Produk Kosong
+        </elements-empty-product>
       </div>
     </div>
   </div>
