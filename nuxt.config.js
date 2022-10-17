@@ -26,7 +26,7 @@ export default {
     ],
   },
   publicRuntimeConfig: {
-    API_URL: process.env.API_URL || 'http://adepranaya.codelillah.com',
+    API_URL: process.env.API_URL || 'https://adepranaya.codelillah.com',
     VERSION: process.env.VERSION || '0.0.0-dev',
   },
 
