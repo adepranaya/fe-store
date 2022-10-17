@@ -1,7 +1,7 @@
 <template lang="">
   <footer class="bg-primary text-light footer mt-8">
     <elements-container-app class="footer-container flex items-center gap-4">
-      <elements-logo-app></elements-logo-app>
+      <elements-app-name></elements-app-name>
       <div>|</div>
       <p>&copy;copyright buith with 💖 by Ade Pranaya {{ new Date().getFullYear() }}</p>
     </elements-container-app>
