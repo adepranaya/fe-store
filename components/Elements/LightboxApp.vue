@@ -2,8 +2,8 @@
   <div class="lightbox" @click.self="onClose">
     <div>
       <elements-button-app class="lightbox-close" @click="onClose"
-        ><img src="~/assets/static/icon/close.svg" alt=""></elements-button-app
-      >
+        ><img src="~/assets/static/icon/close.svg" alt=""
+      /></elements-button-app>
       <slot></slot>
     </div>
   </div>
@@ -30,8 +30,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  & > div {
-    transform: scale(1.5);
+  @media screen and (min-width: $medium) {
+    & > div {
+      transform: scale(1.5);
+    }
   }
 
   &-close {
