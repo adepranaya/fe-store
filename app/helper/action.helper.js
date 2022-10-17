@@ -23,6 +23,7 @@ export default {
   async actionWrapper(func) {
     try {
       await func()
+      resetApiError()
     } catch (error) {
       // do something with the error
       // if error from api
@@ -65,6 +66,17 @@ function handleApiError(error) {
     // Show snackbar & set error message
     $store.commit("app/Set_App_Error", true)
     $store.commit("app/Set_App_Error_Message", message)
+  })
+}
+
+// reset error from api if success
+function resetApiError() {
+  contextWrapper((context) => {
+    const { $store } = context
+
+    // Show snackbar & set error message
+    $store.commit("app/Set_App_Error", false)
+    $store.commit("app/Set_App_Error_Message", '')
   })
 }
 

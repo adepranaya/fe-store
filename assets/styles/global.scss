@@ -23,6 +23,12 @@ body {
     }
   }
 }
+$texts: left, right, center;
+@each $text in $texts {
+  .text-#{$text} {
+    text-align: $text;
+  }
+}
 .grid {
   /*--- taken from the MDN site */
   display: grid;
@@ -49,6 +55,23 @@ body {
   }
   .mb-#{$margin} {
     margin-bottom: #{$margin * 0.2}rem;
+  }
+}
+@for $padding from 1 to 96 {
+  .p-#{$padding} {
+    padding: #{$padding * 0.2}rem;
+  }
+  .pr-#{$padding} {
+    padding-right: #{$padding * 0.2}rem;
+  }
+  .pl-#{$padding} {
+    padding-left: #{$padding * 0.2}rem;
+  }
+  .pt-#{$padding} {
+    padding-top: #{$padding * 0.2}rem;
+  }
+  .pb-#{$padding} {
+    padding-bottom: #{$padding * 0.2}rem;
   }
 }
 

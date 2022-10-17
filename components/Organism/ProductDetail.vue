@@ -4,9 +4,11 @@
       Please wait...
       <br />
     </elements-container-app>
-    <elements-container-app v-if="app_error">
-      {{ app_error_message }}
-      <br />
+
+    <elements-error-app></elements-error-app>
+
+    <elements-container-app v-show="!loading && !item">
+      <img src="~/assets/static/illustrations/undraw_empty.svg" alt="Empty" />
     </elements-container-app>
     <elements-container-app v-if="!loading && item">
       <div class="product-detail">

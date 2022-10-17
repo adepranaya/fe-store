@@ -2,25 +2,25 @@
   <div>
     <div v-if="loading">
       Please wait...
-      <br>
+      <br />
     </div>
-    <div v-if="app_error">
-      {{ app_error_message }}
-      <br>
-    </div>
-    <div v-if="products" class="grid">
-      <elements-card-product
-        v-for="(item, index) in products"
-        :key="index"
-        :id-product="item.id"
-        :name="item.name"
-        :image="getImageUrl(item)"
-        :price="item.price"
-      >
-      </elements-card-product>
-    </div>
-    <div v-else>
-      Produk Kosong
+    <elements-error-app></elements-error-app>
+    <div v-show="!app_error">
+      <div v-if="products" class="grid">
+        <elements-card-product
+          v-for="(item, index) in products"
+          :key="index"
+          :id-product="item.id"
+          :name="item.name"
+          :image="getImageUrl(item)"
+          :price="item.price"
+        >
+        </elements-card-product>
+      </div>
+      <div v-show="!products">
+        <img src="~/assets/static/illustrations/undraw_empty.svg" alt="Empty" />
+        Produk Kosong
+      </div>
     </div>
   </div>
 </template>
