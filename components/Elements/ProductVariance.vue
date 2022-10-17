@@ -1,11 +1,11 @@
 <template lang="">
   <div v-if="variance && variance.length > 0">
     <h3>Variances</h3>
-    <div class="flex">
+    <div class="flex gap-2 flex-wrap">
       <elements-button-app
         v-for="(item, index) in variance"
         :key="`variance-${index}`"
-        class="mr-2 text-light text-shadow"
+        class="text-light text-shadow"
         :class="value === item.size ? 'variance-active' : 'variance'"
         :style="{ backgroundColor: item.size }"
         @click="onClick(item)"

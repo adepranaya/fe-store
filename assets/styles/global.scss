@@ -7,6 +7,10 @@ body {
 .flex {
   display: flex;
   $justifies: start, center, end, space-around, space-between;
+
+  &.flex-wrap {
+    flex-wrap: wrap;
+  }
   @each $justify in $justifies {
     &.justify-#{$justify} {
       justify-content: $justify;
